@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+<style>
+    header{
+        display: flex;
+        justify-content: space-around; 
+        align-items: center;
+        font-size: 16px;
+        font-family: Arial, sans-serif;
+        background-color: black;
+        color:#fff;
+        height: 50px;
+        padding: 0 20px;
+    }
+    .nav span{
+        margin: 0 15px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    .nav span:hover {
+        background-color: #e39ff6;
+        transform: scale(1.1);
+        box-shadow: 0 0 10px rgba(227, 159, 246, 0.5);
+    }
+
+    .shortcut-buttons span{
+        margin: 10px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .shortcut-buttons span:hover {
+        transform: scale(1.2);
+    }
+
+    .brand-title span{ 
+        font-size: 30px;
+        font-weight: bold;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    article {
+        background-color: #e39ff6;
+        padding: 10px;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+    }
+    
+    .bi.bi-lightning-fill{
+        margin-right: 10px;
+        color: gold;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <div class="brand-title"><span>Shooper</span></div>
+        <nav class="nav">
+            <span>Home</span>
+            <span>About</span>
+            <span>Shop</span>
+            <span>Docs</span>
+        </nav>
+        <div class="shortcut-buttons">
+            <span class="bi bi-search"></span>
+            <span class="bi bi-heart-fill" style="color: red;"></span>
+            <span class="bi bi-person-fill" style="color: white;"></span>
+        </div>
+    </header>
+    <article>
+        <span class="bi bi-lightning-fill"></span>
+        <p style="color: white;">Happy Holidays! Deals On Everything</p>
+    </article>
+    <section class="hero-section">
+        <img src="src/images/sh2.png" alt="Hero Image">
+        <h1>Welcome to Shooper!</h1>
+        <p>Your one-stop shop for all your needs.</p>
+    </section>
+    <style>
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+        .hero-section img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        body {
+            animation: backgroundAnimation 10s infinite alternate;
+            overflow: hidden;
+            position: relative;
+        }
+        @keyframes backgroundAnimation {
+            0% { background-color: #e39ff6; }
+            100% { background-color: #f0e68c; }
+        }
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            color: white;
+            font-size: 1em;
+            pointer-events: none;
+            animation: snowfall linear infinite;
+        }
+        @keyframes snowfall {
+            to {
+                transform: translateY(100vh) rotateZ(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+    <script>
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.textContent = '❄';
+            snowflake.style.left = Math.random() * window.innerWidth + 'px';
+            snowflake.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            snowflake.style.opacity = Math.random() * 0.5 + 0.5;
+            document.body.appendChild(snowflake);
+            setTimeout(() => snowflake.remove(), 8000);
+        }
+        setInterval(createSnowflake, 200);
+    </script>
+</body>
+<footer>
+    <p style="text-align: center; padding: 10px; background-color: black; color: white;">&copy; 2024 Shooper. All rights reserved.</p>
+</footer>
+</html>
